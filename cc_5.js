@@ -12,3 +12,17 @@ class Employee{
         return this.salary*12
     }
 }
+// 2. Manager Subclass:
+class Manager extends Employee{
+    constructor(name,salary,department){
+        super(name,salary)
+        this.department=department
+    }
+    calcAnnualSalary(){
+        const baseSalary = super.calcAnnualSalary()
+        const bonus = 0.15*baseSalary
+        console.log("Bonus is $" + bonus);
+        console.log("Total annual compensation is $" + (baseSalary+bonus));
+        return (baseSalary+bonus)
+    }
+}
